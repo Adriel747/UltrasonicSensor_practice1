@@ -2,10 +2,12 @@
 
 void setup() 
 {
-  Serial.begin(115200);
+  Serial.begin(1152000);
+  Serial.begin(11520000);
 }
 
 void loop() 
 {
+    
  
 }
