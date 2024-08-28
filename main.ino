@@ -2,7 +2,25 @@
 #include "Led.h"
 #include "UltrasonicSensor.h"
 #include "Microcontroller.h"
+#include "UnitTest.h"
+//definicion de ON y OFF
+#define ON HIGH
+#define OFF LOW
 
+// iniciar pruebas unitarias
+void Test(){
+    UnitTest unitetest;
+    unitetest.testLedOn();
+    unitetest.testLedOff();
+    unitetest.testLedToggle();
+    unitetest.testLedInitialState();
+    unitetest.testUltrasonicSensorClose();
+    unitetest.testUltrasonicSensorFar();
+    unitetest.testMicrocontrollerObjectClose();
+    unitetest.testMicrocontrollerObjectFar();
+    unitetest.testMicrocontrollerObjectAtLimit();
+    unitetest.testLedToggleMultipleTimes();
+}
 // Definiciones de pines
 #define TRIGGER_PIN 12
 #define ECHO_PIN 13
@@ -21,6 +39,7 @@ Microcontroller controller(leds, 3, sensor);
 void setup() 
 {
   Serial.begin(115200);
+  Test();
 }
 
 void loop() 
